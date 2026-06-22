@@ -33,40 +33,6 @@ for (const a of [
 
 let { defines, structs, aliases, enums, callbacks, functions } = data
 
-functions.push({
-  name: 'DrawTextBoxed',
-  description: 'Utility from original examples for word-wrapping some text',
-  returnType: 'void',
-  params: [
-    { type: 'Font', name: 'font' },
-    { type: 'const char *', name: 'text' },
-    { type: 'Rectangle', name: 'rec' },
-    { type: 'float', name: 'fontSize' },
-    { type: 'float', name: 'spacing' },
-    { type: 'bool', name: 'wordWrap' },
-    { type: 'Color', name: 'tint' },
-  ]
-})
-
-functions.push({
-  name: 'DrawTextBoxedSelectable',
-  description: 'Utility from original examples for word-wrapping some text, and allowing you to show selection',
-  returnType: 'void',
-  params: [
-    { type: 'Font', name: 'font' },
-    { type: 'const char *', name: 'text' },
-    { type: 'Rectangle', name: 'rec' },
-    { type: 'float', name: 'fontSize' },
-    { type: 'float', name: 'spacing' },
-    { type: 'bool', name: 'wordWrap' },
-    { type: 'Color', name: 'tint' },
-    { type: 'int', name: 'selectStart' },
-    { type: 'int', name: 'selectLength' },
-    { type: 'Color', name: 'selectTint' },
-    { type: 'Color', name: 'selectBackTint' },
-  ]
-})
-
 // add type-aliases & a keyed list for lookup
 const mappedStructs = structs.reduce((a, c) => ({ ...a, [c.name]: c }), {})
 for (const { type, name, description } of aliases) {
