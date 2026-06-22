@@ -55,7 +55,8 @@ fi
 # fi
 
 # build JSON, ala RobLoach/raylib-api technique
-make -C vendor/raylib/tools/rlparser
+cc -o rlparser rlparser.c
+./rlparser
 ./vendor/raylib/tools/rlparser/rlparser -i vendor/raylib/src/raylib.h -o tools/api/raylib.json -f JSON -d RLAPI
 ./vendor/raylib/tools/rlparser/rlparser -i vendor/raylib/src/rlgl.h -o tools/api/rlgl.json -f JSON -d RLAPI -t "RLGL IMPLEMENTATION"
 ./vendor/raylib/tools/rlparser/rlparser -i vendor/raygui/src/raygui.h -o tools/api/raygui.json -f JSON -d RAYGUIAPI -t "RAYGUI IMPLEMENTATION"
