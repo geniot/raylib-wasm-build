@@ -56,11 +56,10 @@ fi
 
 # build JSON, ala RobLoach/raylib-api technique
 cc -o rlparser rlparser.c
-./rlparser
-./vendor/raylib/tools/rlparser/rlparser -i vendor/raylib/src/raylib.h -o tools/api/raylib.json -f JSON -d RLAPI
-./vendor/raylib/tools/rlparser/rlparser -i vendor/raylib/src/rlgl.h -o tools/api/rlgl.json -f JSON -d RLAPI -t "RLGL IMPLEMENTATION"
-./vendor/raylib/tools/rlparser/rlparser -i vendor/raygui/src/raygui.h -o tools/api/raygui.json -f JSON -d RAYGUIAPI -t "RAYGUI IMPLEMENTATION"
-./vendor/raylib/tools/rlparser/rlparser -i vendor/raudio/src/raudio.h -o tools/api/raudio.json -f JSON -t "RAUDIO IMPLEMENTATION"
+./rlparser -i vendor/raylib/src/raylib.h -o tools/api/raylib.json -f JSON -d RLAPI
+./rlparser -i vendor/raylib/src/rlgl.h -o tools/api/rlgl.json -f JSON -d RLAPI -t "RLGL IMPLEMENTATION"
+./rlparser -i vendor/raygui/src/raygui.h -o tools/api/raygui.json -f JSON -d RAYGUIAPI -t "RAYGUI IMPLEMENTATION"
+./rlparser -i vendor/raudio/src/raudio.h -o tools/api/raudio.json -f JSON -t "RAUDIO IMPLEMENTATION"
 
 
 if [ ! -d "vendor/raylib/build" ];then
